@@ -111,7 +111,7 @@ DATABASES['default'].update(db_from_env)
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'GMT'
+TIME_ZONE = 'Europe/London'
 
 USE_I18N = True
 
