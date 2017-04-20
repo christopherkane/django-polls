@@ -2,7 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
-
+from django.core.urlresolvers import reverse
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
@@ -10,6 +10,9 @@ class Question(models.Model):
 
     def __str__(self):
         return self.question_text
+
+    def get_absolute_url(self):
+        return reverse('polls:detail', args=[self.id])
 
     def was_published_recently(self):
         now = timezone.now()
